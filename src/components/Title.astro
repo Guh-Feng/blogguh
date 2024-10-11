@@ -1,30 +1,120 @@
 ---
 import '@fontsource/roboto';
 import "open-props/style";
-import "open-props/normalize";
 import "open-props/buttons";
 ---
 
-<h1>GUH FENG</h1>
-<h3>Just Another Blog Project</h3>
-
+<div class="wrapper">
+    <h1>GUH FENG</h1>
+    <h3>Just Another Blog Project</h3>
+    <div class="ribbon"></div>
+    <nav>
+        <a href="/blog">
+            <div class="button">Blog</div>
+        </a>
+        <a href="/ideas">
+            <div class="button">Ideas</div>
+        </a>
+        <a href="/portfolio">
+            <div class="button">Portfolio</div>
+        </a>
+    </nav>
+</div>
+    
 <style>
+    .wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 25vh auto auto auto;
+    }
+
     h1{
-        text-align: left;
+        grid-row: 2;
+        grid-column: 2/5;
+
         margin: 0;
+        
         font-family: 'Roboto', sans-serif;
-        font-size: 10em;
+        font-size: 15em;
         font-weight: 900;
-        color: var(--green-3); 
+        text-align: left;
+        color: var(--gray-7);
         line-height: 90%;
     }
 
     h3{
-        text-align: left;
-        margin: 0 0 0 0.25em;
+        grid-row: 3;
+        grid-column: 2/5;
+
+        margin: 0 0 0.25em 0.25em;
+        /* border: solid 1px black; */
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 2em;
+        font-size: 3em;
         font-weight: normal;
+        color: var(--gray-7);
+        text-align: left;
         line-height: 95%;
     }
+    
+    .ribbon{
+        background: var(--yellow-2);
+        grid-row: 4;
+        grid-column: 1/10;
+    }
+
+    nav{
+        grid-column: 2/5;
+        grid-row: 4;
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 12em;
+    }
+
+    a{
+        grid-column: 2/5;
+        margin: 1em;
+        padding: 0 0 0 0;
+        
+        border: var(--gray-7);
+        border-style: solid;
+        border-radius: 1em;
+        
+        color: var(--gray-7);
+        text-decoration: none;
+    }
+    
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 5em;
+        font-size: 3.5em;
+    }
+
+    @media (max-width: 1553px) {
+        .wrapper{
+            grid-template-rows: 53vh auto auto;
+        }
+
+        h1{
+            grid-column: 1/4;
+            grid-row: 1;
+        }
+        h3{
+            grid-column: 1/5;
+            grid-row: 2;
+        }
+        .ribbon{
+            grid-column: 1/5;
+            grid-row: 3;
+        }
+        nav{
+            grid-column: 1/4;
+            grid-row: 3;
+        }
+    }
+
 </style>
