@@ -5,9 +5,9 @@ import "open-props/buttons";
 ---
 
 <div class="wrapper">
-    <h1>GUH FENG</h1>
-    <h3>Just Another Blog Project</h3>
-    <div class="ribbon"></div>
+    <h1 class="guh">GUH</h1>
+    <h1>FENG</h1>
+    <h3>Just Another Blog</h3>
     <nav>
         <a href="/blog">
             <div class="button">Blog</div>
@@ -23,63 +23,61 @@ import "open-props/buttons";
     
 <style>
     .wrapper{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 25vh auto auto auto;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 10%;
     }
 
     h1{
-        grid-row: 2;
-        grid-column: 2/5;
-
-        margin: 0;
+        margin: auto;
         
         font-family: 'Roboto', sans-serif;
-        font-size: 15em;
+        font-size: min(24vw, 15em);
         font-weight: 900;
-        text-align: left;
+        text-align: center;
         color: var(--gray-7);
         line-height: 90%;
     }
 
-    h3{
-        grid-row: 3;
-        grid-column: 2/5;
+    .guh{
+        position: relative;
+        right: 1vw;
+    }
 
-        margin: 0 0 0.25em 0.25em;
+    h3{
+        margin: 0 0 0 0;
         /* border: solid 1px black; */
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 3em;
+        font-size: min(7vw, 4em);
         font-weight: normal;
         color: var(--gray-7);
-        text-align: left;
-        line-height: 95%;
+        text-align: center;
+        line-height: 100%;
     }
     
-    .ribbon{
-        background: var(--yellow-2);
-        grid-row: 4;
-        grid-column: 1/10;
-    }
-
     nav{
-        grid-column: 2/5;
-        grid-row: 4;
-
+        position: relative;
+        margin: 1em auto auto auto;
+        padding: 0;
         display: flex;
         flex-direction: row;
-        width: 100%;
-        height: 12em;
+        flex-wrap: wrap;
+        width: 100vw;
+        height: 100%;
+        justify-content: center;
+        background: var(--yellow-2);
     }
 
     a{
-        grid-column: 2/5;
-        margin: 1em;
-        padding: 0 0 0 0;
-        
+        margin: 1em 2em 0.8em 2em;
+        padding: 1em 0 1em 0;
+        width: min(15em, 45vw);
+        height: min(5em, 15vw);
         border: var(--gray-7);
         border-style: solid;
-        border-radius: 1em;
+        border-radius: 3em;
         
         color: var(--gray-7);
         text-decoration: none;
@@ -88,32 +86,24 @@ import "open-props/buttons";
     .button{
         display: flex;
         justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 5em;
-        font-size: 3.5em;
+        font-size: min(3.5em, 10vw);
     }
 
-    @media (max-width: 1553px) {
+    @media (min-width: 640px) {
         .wrapper{
-            grid-template-rows: 53vh auto auto;
+            
         }
 
         h1{
-            grid-column: 1/4;
-            grid-row: 1;
         }
+        
         h3{
-            grid-column: 1/5;
-            grid-row: 2;
         }
+
         .ribbon{
-            grid-column: 1/5;
-            grid-row: 3;
         }
+
         nav{
-            grid-column: 1/4;
-            grid-row: 3;
         }
     }
 
